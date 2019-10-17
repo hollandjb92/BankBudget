@@ -1,0 +1,77 @@
+.bankImg {
+    width: 100%;
+    
+    }
+    
+    
+    .ulBank {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:black;
+      }
+      
+    
+      .liBank {
+        float: left;
+      }
+      
+      .liBank .aBank {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      .liBank .aBank:hover {
+        background-color: greenyellow;
+      }
+    
+    
+    /* Nav will be fixed at the top while we scroll down */
+    .ulBank {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+    
+      /* Mobile responsive */
+    
+      /* @media screen and (max-width: 600px) {
+        ul.topnav li.right, 
+        ul.topnav li {float: none;}
+      } */
+    
+        /* THis is for the image and text inside the image */
+    
+        .containerBank {
+            position: relative;
+            text-align: center;
+            padding-top: 54 px;
+        }
+    
+          .topleft {
+            position: absolute;
+            top: 8px;
+            font-size: 18px;
+            padding-top: 100px;
+          }
+    
+          /* image */
+    
+    
+
+          .h1Bank{
+        
+                color: darkblue;
+                font-size: 30px
+        
+          }
+
+          .pBank{
+
+            color:forestgreen; 
+            font-size: 20px
+          }
