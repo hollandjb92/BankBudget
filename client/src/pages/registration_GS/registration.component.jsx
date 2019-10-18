@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./registration.styles.scss";
 import CustomButton from "../../components/custombutton/custombutton.component";
 import FormInput from "../../components/forminput/forminput.component";
+
 import API from "../../utils/API";
 
 class Registration extends Component {
@@ -15,6 +16,7 @@ class Registration extends Component {
         deposit: '',
         withdrawal: ''
       };
+      this.balance = 0;
     }
     myChangeHandler = (event) => {
       let nam = event.target.name;
@@ -36,7 +38,15 @@ class Registration extends Component {
       event.preventDefault();
       let nam = event.target.name;
       let val = event.target.value;
-      this.setState({[nam]: val});
+      
+      if (nam === "amount")
+      {
+        this.state.amount = ''
+      }
+      else {
+        this.setState({[nam]: val});
+      }
+      this.balance = parseInt(this.balance) + parseInt(this.state.amount)
       if (nam === "D")
       {
         //this.state.deposit == this.state.amount
@@ -47,15 +57,16 @@ class Registration extends Component {
         deposit: this.state.deposit,
         withdrawal: this.state.withdrawal
       })
-      alert("You are submitting " + this.state.FirstName
+      alert("Your transaction of: " + this.state.amount + " has been recorded to your balance."
 );
     }
 
     render() {
       return (
+      <div>
         <form onSubmit={this.mySubmitHandler}>
         <h1>Hello {this.state.FirstName
-} {this.state.age}</h1>
+} {this.state.lastName}</h1>
         <p>Enter your First Name:</p>
         <input
           type='text'
@@ -68,15 +79,7 @@ class Registration extends Component {
           name='lastName'
           onChange={this.myChangeHandler}
         />
-        <p>What Type of Transaction would you like to make? 
-        ("W" for withdrawal, "D" for deposit)
-        </p>
-        <input
-          type='text'
-          name='Deposit_Indicator'
-          onChange={this.myChangeHandler}
-        />
-        <p>Enter the Amount you wish to withdrawal/deposit. Leave blank if viewing balance</p>
+        <p>Enter the Amount you wish to withdrawal/deposit. Leave blank if just viewing balance</p>
         <input
           type='text'
           name='amount'
@@ -86,6 +89,9 @@ class Registration extends Component {
       <br/>
       <input type='submit' />
         </form>
+        <br></br>
+        <p1> Your current Balance: {this.balance}</p1>
+        </div>
       );
     }
   }

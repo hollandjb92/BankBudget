@@ -20,11 +20,12 @@ class Navbar extends Component {
         return (
             <div>
                 <ul className = "ulBank " >
-                    <li className = "liBank"><a className="active aBank" href="/home">Home</a></li>
+                    <li className = "liBank"><a className="active aBank" href="/">Home</a></li>
                     <li className = "liBank"><a className="aBank" href="/about">About</a></li>
                     <li className = "liBank"><a className="aBank" href="/contact">Contact</a></li>
                     {/* <li className = "liBank"><a className="aBank" herf ="#contact" onClick={this.redirectContact} >Contact</a></li> */}
                     <li className = "liBank"><a className="aBank" href="/budget">Budget</a></li>
+                    <li className = "liBank"><a className="aBank" href="/registrationGS">Make a Transaction</a></li>
                 </ul>
                
             </div>
