@@ -1,12 +1,17 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+var url = "mongodb://localhost:27017/User"
 
 // This file empties the User collection and inserts the books below
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/reactuser"
-);
+mongoose.connect(url, function(err, db) {
+  if(err) {
+    console.log(err);
+  }
+  else{
+    console.log("connected to the seed db")
+  }
+});
 
 // email: { type: String, required: true },
 // firstName: String,
