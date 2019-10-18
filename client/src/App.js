@@ -5,6 +5,7 @@ import "./App.css";
 
 import Header from "./components/header/header.component";
 import Registration from "./pages/registration/registration.component";
+import Registration_GS from "./pages/registration_GS/registration.component";
 import HomePage from "./pages/homepage/homepage.component";
 import AccountPage from "./pages/account_page/account_page.component";
 import SpotlightTile from "./components/spotlightTile/spotlightTile";
@@ -32,6 +33,7 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/account" component={AccountPage} />
             <Route exact path="/registration" component={Registration} />
+            <Route exact path="/registrationGS" component={Registration_GS} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/about" component={About} />
             <Route exact path="/budget" component={Budget} />
